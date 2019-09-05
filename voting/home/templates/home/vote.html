@@ -1,0 +1,32 @@
+{%extends 'home/header.html'%}
+
+{%block content%}
+
+<h3>Namaste {{user}}!! Vote for your favorite candidate</h3><br><br>
+
+    <table class="table table-sm" width="50%" border-collapse="collapse">
+        {%for acc,can in detail%}
+        <form action="vote" method="post">
+
+            <!--<tr>
+                <th>Candidate</th>
+                <th>Vote</th>
+            </tr>-->
+
+            <tr>
+
+                <td>{{can}}</td>
+                <td><strong>Enter Pin:</strong> <input name = "pin"></td>
+                {% csrf_token %}
+                <input name="acc" value="{{acc}}" hidden>
+                <input name = "user" value="{{user}}" hidden>
+                <td><button type="submit" class="btn btn-danger">Vote</button></td>
+
+            </tr>
+
+
+        </form>
+        {%endfor%}
+    </table><br>
+
+{%endblock%}

@@ -1,0 +1,35 @@
+{% extends "home/header.html" %}
+
+
+{%block content%}
+<h2>Transactions</h2>
+
+    <div class="container-fluid">
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Commission to Voters</th>
+                        <th scope="col">Voters to Candidates</th>
+                    </tr>
+                </thead>
+
+                {%for i in list%}
+
+                <tbody>
+                    <tr>
+                        <td>{%if i.Value == 1.5%}1 credit to {{i.To}}{%endif%}</td>
+                        <td>{%if i.Value == 1.0%}1 credit to {{i.To}}{%endif%}</td>
+                    </tr>
+                </tbody>
+                {%endfor%}
+
+                <tbody>
+                    <tr>
+                        <td><strong>Total Number of Registered Voters: {{toVoter}}</strong></td>
+                        <td><strong>Total voters that participated: {{toCom}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+{%endblock%}

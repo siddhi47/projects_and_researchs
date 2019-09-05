@@ -1,0 +1,51 @@
+{% extends "home/header.html"%}
+
+{% block content%}
+    <h3>Vote for your favorite candidate</h3>
+    <form action="hello">
+        <button type="submit">hello</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th>Balance</th>
+        </tr>
+
+        {%for acc,bal in detail%}
+        <form action="vote" method="post">
+            <tr>
+                <th>{{acc}}</th>
+                <th>{{bal}}</th>
+                {% csrf_token %}
+                <input name="acc" value="{{acc}}" hidden>
+                <th><button>Vote</button></th>
+
+            </tr>
+
+        </form>
+        {%endfor%}
+
+    </table><br>
+    account clicked:{{account}}
+    <form action="getBalance" method="post">
+        {% csrf_token %}
+        <input name="balance">
+        <button type="submit">View Balance</button>
+    </form>
+    {{req}}
+    <h4>Transfer Funds</h4>
+    <form action="transfer" method="post">
+        {% csrf_token %}
+        <input name="from">
+        {% csrf_token %}
+        <input name="to">
+        <button type="submit">Transfer Ether</button>
+    </form>
+    <form method="post" action="getBlock">
+        {% csrf_token %}
+        <button type="submit">getBlock</button>
+    </form>
+
+{{blocks}}
+{%endblock%}

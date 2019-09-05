@@ -1,0 +1,29 @@
+{% extends "home/header.html" %}
+
+{% block content%}
+    <h2 style="text-align:center;">Comission Page</h2>
+    <h3 class="col-md-4 offset-md-4">Register </h3>
+    <form method="post" action="register">
+        <div class="container">
+            <div class="col-md-4 offset-md-4">
+            {% csrf_token %}
+            Name:<input class="form-control" required name="name">
+            Password:<input class="form-control" type = "password"required name="pass">
+            Confirm Password:<input class="form-control" type="password" required name="cpass">
+            Email : <input class="form-control" type="email", required name="email">
+            <div class="dropdown">
+                Type:<br><select class="btn btn-secondary dropdown-toggle" required name="drop">
+                     <option >Candidate</option>
+                     <option >Voter</option>
+                      </select>
+            </div>
+        <br><button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+        </div>
+    </form><br>
+    {{message}} <br>
+    {{account}}<br>
+    {{pin}}
+    <br><a href="distribute">Start Voting</a>
+    <br><a href = "showTransactions">Show Transactions</a>
+{% endblock %}

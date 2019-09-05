@@ -1,2 +1,3 @@
 # utilities
-Different utilities in python
+
+Django web app for digital voting using blockchain

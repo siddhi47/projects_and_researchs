@@ -1,0 +1,11 @@
+{% extends "home/header.html" %}
+
+{%block content%}
+<h2>Election commission</h2>
+<p>When the button below is pressed the election will commence!</p>
+<form  action="distribute/dist">
+    <button type="submit" class="btn btn-danger">Start Election</button>
+</form>
+<br>{{message}}
+
+{%endblock%}

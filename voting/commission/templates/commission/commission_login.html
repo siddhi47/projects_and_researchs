@@ -1,0 +1,11 @@
+{% extends "home/header.html" %}
+
+{%block content%}
+<h2>Distribute Votes to Voters</h2>
+<p>When the distribute button is pressed, Votes will be distributed to all the voters!</p>
+<form  action="distribute/dist">
+    <button type="submit" class="btn btn-danger">Distribute</button>
+</form>
+<br>{{message}}
+
+{%endblock%}

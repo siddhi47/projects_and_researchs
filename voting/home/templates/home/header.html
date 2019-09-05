@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blockchain Voting</title>
+    {%load staticfiles%}
+    <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type = "text/css"/>
+    <script type="text/javascript" src = "/static/home/jquery/jquery-3.3.1.js"></script>
+
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+</head>
+<body class="body" >
+<div class="container">
+    <div class ="row justify-content-center py-3" style=" background-color:#414148; margin-bottom:10px">
+        <div>
+            <h1 class="m-0" style="color:#fff;">Digital Voting Using Blockchain</h1>
+        </div>
+    </div>
+    <div class="col-md-auto">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer style="margin-top:35%">
+        <div class="container-fluid">
+            <h4><strong>Developed By:</strong></h4>
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">IOE Roll Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Digbijaya Shakya</td>
+                        <td>44015</td>
+                    </tr>
+                    <tr>
+                        <td>Manjik Shrestha</td>
+                        <td>44052</td>
+                    </tr>
+                    <tr>
+                        <td>Rahul Desar</td>
+                        <td>44059</td>
+                    </tr>
+                    <tr>
+                        <td>Siddhi Kiran Bajracharya</td>
+                        <td>44072</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </footer>
+</div>
+
+</body>
+
+</html>
