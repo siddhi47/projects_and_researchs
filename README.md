@@ -31,6 +31,7 @@ Install keras in new environment
 Run the following commands in the new conda environment.
 
 ```
+(keras)$ conda install ipykernel
 (keras)$ python -m ipykernel install --user --name keras
 ```
 
